@@ -1,5 +1,8 @@
-'''
-from flask import Flask, render_template
+from openpyxl import load_workbook
+import os
+
+from flask import *
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -7,11 +10,24 @@ def home():
    return render_template('index.html')
 if __name__ == '__main__':
    app.run()
-'''
    
-from openpyxl import load_workbook
-import os
+app.route('/autocomplete', methods=["GET", "POST"])
+def autocomplete():
+   if request.method == "POST":
+      if request.form.get("type") == "state": #autocomplete for state
+         options = []
+         currently_typed = request.form.get("info")
+         
+         for k, state in state_abbrev.values():
+            if state[:len(currently_typed)] == currently_typed:
+               options.append(state)
+         
+         return jsonify(options)
 
+
+
+   
+cities_and_counties = {}
 #state
 state_abbrev = {
     'AK': 'Alaska',
@@ -163,6 +179,8 @@ for i in range(2, 30411):
       cities_in_states[cities_spreadsheet.cell(row=i, column=3).value] = []
    cities_in_states[cities_spreadsheet.cell(row=i, column=3).value].append(cities_spreadsheet.cell(row=i, column=1).value)
 
+
+cities_and_counties = cities_in_states.values() + counties_in_states.values(1)
 
 #cities in counties
 cities_in_counties = {}

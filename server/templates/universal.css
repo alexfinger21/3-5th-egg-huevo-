@@ -40,8 +40,8 @@ body {
 }
 
 img[src="../images/cityscape.png"] {
-  height: 125%;
-  margin-bottom: 29.7vh;
+  height: 120vh;
+  margin-bottom: 35vh;
   position:absolute;
     z-index:0;
     object-fit: cover;
@@ -65,8 +65,8 @@ img[src="../images/cityscape.png"] {
   background-color: #F7EBE8;
   padding: 2vh;
   border-radius: 1.5vh;
-  padding-right: 11vh;
-  padding-left: 11vh;
+  padding-right: 11vw;
+  padding-left: 11vw;
 }
 
 
@@ -88,7 +88,7 @@ img[src="../images/cityscape.png"] {
   outline: none;
   margin-bottom: 0;
   padding: 3vh;
-  padding-right:7.4vh;
+  padding-right:7.4vw;
   z-index: 1;
 }
 
@@ -102,9 +102,8 @@ z-index: 1;
 }
 
 .search-button img {
-  width: 4vh;
-  height: 4vh;
-  object-fit: cover;
+  width: 3vw;
+  height: 5.3vh;
 }
 
 .select-location{
@@ -113,8 +112,8 @@ z-index: 1;
   background-color: #F7EBE8;
   padding: 2.5vh;
   border-radius: 1.5vh;
-  padding-right: 5vh;
-  padding-left: 5vh;
+  padding-right: 5vw;
+  padding-left: 5vw;
   margin-top: 0;
 
 }
@@ -146,7 +145,7 @@ img {
     border-radius: 1.5vh;
     padding-top: 2.5vh;
     padding-bottom:2.5vh;
-    border-width: 0.3vh;
+    border-width: 0.3vw;
 
   }
   input::placeholder {

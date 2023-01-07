@@ -40,7 +40,7 @@ body {
 }
 
 img[src="../images/cityscape.png"] {
-  height: 120vh;
+  height: 45vh;
   margin-bottom: 35vh;
   position:absolute;
     z-index:0;
@@ -88,7 +88,7 @@ img[src="../images/cityscape.png"] {
   outline: none;
   margin-bottom: 0;
   padding: 3vh;
-  padding-right:7.4vw;
+  padding-right:6vw;
   z-index: 1;
 }
 
@@ -96,14 +96,14 @@ img[src="../images/cityscape.png"] {
   background: transparent;
   border: none;
   outline: none;
-margin-left: -7vh;
+margin-left: -4vw;
 z-index: 1;
 
 }
 
 .search-button img {
-  width: 3vw;
-  height: 5.3vh;
+  width: 2.4vw;
+  height: 5vh;
 }
 
 .select-location{

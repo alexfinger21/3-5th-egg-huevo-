@@ -14,8 +14,8 @@ jSuites.dropdown(document.getElementById('dropdown'), {
   autocomplete: true,
   lazyLoading: true,
   multiple: false,
-  width: '280px',
-data: ["balls", "no", "try again", "average garringtin"]
+  width: '100%',
+data: ["no", "try again", "another city"]
 });
 
 function getLocation(){

@@ -114,7 +114,7 @@ state_unabbrev = {
     "Vermont": "VT",
     "Virginia": "VA",
     "Washington": "WA",
-    "Hawaiʻi": "HI",
+    "Hawaii": "HI",
     "West Virginia": "WV",
     "Wisconsin": "WI",
     "Wyoming": "WY",

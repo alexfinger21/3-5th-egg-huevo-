@@ -29,13 +29,22 @@ body {
 
 .underline{
   transform: scale(1, -1);
-        color: #db8c42;
+        color: #E9C29F;
         -moz-transform: scale(1, -1);
         -webkit-transform: scale(1, -1);
         -o-transform: scale(1, -1);
         -ms-transform: scale(1, -1);
         transform: scale(1, -1);
-        font-weight:50;
+        
+      
+}
+
+img[src="../images/cityscape.png"] {
+  height: 125%;
+  margin-bottom: 29.7vh;
+  position:absolute;
+    z-index:0;
+    object-fit: cover;
 }
 
 .second-section{
@@ -64,6 +73,7 @@ body {
 .OR{
   padding-top:.5vh;
   padding-bottom:.5vh;
+  z-index: 1;
 }
 .form {
   display: flex;
@@ -79,6 +89,7 @@ body {
   margin-bottom: 0;
   padding: 3vh;
   padding-right:7.4vh;
+  z-index: 1;
 }
 
 .search-button {
@@ -86,6 +97,7 @@ body {
   border: none;
   outline: none;
 margin-left: -7vh;
+z-index: 1;
 
 }
 
@@ -115,9 +127,10 @@ img {
   .select-location {
     border: none;
     outline: none;
-    transition: background-color 20ms linear;
+    transition: background-color 200ms linear;
     background-color: #F7EBE8;
     background-color: #E8BEB4;
+    z-index: 1;
 
   }
   .select-location:hover{
@@ -137,7 +150,7 @@ img {
 
   }
   input::placeholder {
-  
+    
     color: black;
 }
 

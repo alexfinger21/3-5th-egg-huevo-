@@ -14,7 +14,8 @@ jSuites.dropdown(document.getElementById('dropdown'), {
   autocomplete: true,
   lazyLoading: true,
   multiple: false,
-  width: '100%',
+  width: '100vh',
+  placeholder: 'Enter a state to get started',
 data: ["no", "try again", "another city"]
 });
 

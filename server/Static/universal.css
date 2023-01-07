@@ -7,7 +7,7 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 80vh;
+  min-height: 90vh;
   justify-content: space-between;
   flex-grow: 1;
   margin: 0;
@@ -41,7 +41,7 @@ body {
 
 img[src="../images/cityscape.png"] {
   height: 45vh;
-  margin-bottom: 35vh;
+  margin-bottom: 18.9vh;
   position:absolute;
     z-index:0;
     object-fit: cover;
@@ -56,6 +56,7 @@ img[src="../images/cityscape.png"] {
   justify-content: center;
  align-items: center;
  font-size: 2vh;
+ 
   
 }
 
@@ -69,6 +70,13 @@ img[src="../images/cityscape.png"] {
   padding-left: 11vw;
 }
 
+.combine{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
 
 .OR{
   padding-top:.5vh;
@@ -82,14 +90,29 @@ img[src="../images/cityscape.png"] {
 
 }
 .search-field {
-  border: solid #E8BEB4;
-  border-width: .3vh;
   border-radius: 1vh;
   outline: none;
   margin-bottom: 0;
-  padding: 3vh;
-  padding-right:6vw;
+  padding-right: 0;
   z-index: 1;
+  border: solid #E8BEB4;
+  border-width: 0.3vh;
+  
+}
+
+.jdropdown-header, jss_object {
+  border: none !important;
+outline: none !important;
+  padding: 2vh !important;
+  font-family: monospace;
+  font-size: 2.4vh;
+}
+
+jdropdown-container-header {
+  border: none !important;
+  outline: none !important;
+  padding: 2vh !important;
+  font-family: monospace;
 }
 
 .search-button {
@@ -102,8 +125,8 @@ z-index: 1;
 }
 
 .search-button img {
-  width: 2.4vw;
-  height: 5vh;
+  width: 2vw;
+  height: 4vh;
 }
 
 .select-location{
@@ -129,7 +152,7 @@ img {
     transition: background-color 200ms linear;
     background-color: #F7EBE8;
     background-color: #E8BEB4;
-    z-index: 1;
+    z-index: 0.2;
 
   }
   .select-location:hover{

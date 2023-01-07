@@ -19,6 +19,17 @@ jSuites.dropdown(document.getElementById('dropdown'), {
 data: ["no", "try again", "another city"]
 });
 
+jSuites.dropdown(document.getElementById('dropdownstate'), {
+  url: '/v4/large',
+  autocomplete: true,
+  lazyLoading: true,
+  multiple: false,
+  width: '100vh',
+  placeholder: 'Enter a state to get started',
+data: ["no", "try again", "another city"]
+});
+document.getElementById('dropdownstate').style.visibility = 'hidden';
+
 function getLocation(){
     const options = {
         enableHighAccuracy: true,

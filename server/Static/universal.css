@@ -139,6 +139,57 @@ jdropdown-container-header {
 
 }
 
+.jdropdownstate-header, jss_object {
+ 
+  visibility: hidden !important;
+  border: none !important;
+outline: none !important;
+  padding: 2vh !important;
+  font-family: monospace;
+  font-size: 2.4vh;
+  border-bottom-left-radius: 1vh;
+  border-bottom-right-radius: 1vh;
+
+}
+
+.jdropdownstate-content {
+  visibility: hidden !important;
+
+  background-color: none !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  border-bottom-left-radius: 1vh;
+  border-bottom-right-radius: 1vh;
+
+}
+
+.jdropdownstate-container {
+  visibility: hidden !important;
+
+
+  background-color: none !important;
+  min-width: 0 !important;
+  width: 90% !important;
+  border-bottom-left-radius: 1vh;
+  border-bottom-right-radius: 1vh;
+
+}
+
+jdropdownstate-container-header {
+  visibility: hidden !important;
+
+
+  border: none !important;
+  outline: none !important;
+  padding: 2vh !important;
+  font-family: monospace;
+  border-bottom-left-radius: 1vh;
+  border-bottom-right-radius: 1vh;
+
+}
+
+
+
 .search-button {
   background: transparent;
   border: none;

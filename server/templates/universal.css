@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  font-family: Oswald;
+  font-weight: normal;
 }
 
 body {
@@ -13,18 +15,17 @@ body {
 
 }
 .first-section{
-  border: solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-size: 15vh;
+  font-size: 10vh;
   background-color: #E54B4B;
+  
 
 }
 
 .second-section{
-  border: solid red;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -33,17 +34,40 @@ align-items: center;
 }
 
 .select-city{
+  font-family: monospace;
+  font-size: 3vh;
   background-color: #F7EBE8;
   padding: 2vh;
   border-radius: 1.5vh;
-  padding-right: 5vh;
-  padding-left: 5vh;
+  padding-right: 11vh;
+  padding-left: 11vh;
+}
+
+
+.OR{
+  padding-top:.5vh;
+  padding-bottom:.5vh;
 }
 
 .select-location{
+  font-family: monospace;
+  font-size: 3vh;
   background-color: #F7EBE8;
   padding: 2vh;
   border-radius: 1.5vh;
   padding-right: 5vh;
   padding-left: 5vh;
+  margin-top: 0;
 }
+
+img {  
+  object-fit: cover;  
+  height: 3vh;
+  }  
+
+  button {
+    background-color: #a2e0b3;
+    border: none;
+    outline: none;
+
+  }

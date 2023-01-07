@@ -41,7 +41,7 @@ body {
 
 img[src="../images/cityscape.png"] {
   height: 45vh;
-  margin-bottom: 18.9vh;
+  margin-bottom: 30vh;
   position:absolute;
     z-index:0;
     object-fit: cover;

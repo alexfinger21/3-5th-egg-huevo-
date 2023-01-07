@@ -7,30 +7,48 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-evenly;
+  min-height: 80vh;
+  justify-content: space-between;
   flex-grow: 1;
   margin: 0;
   border: 1;
+  background-color: #F7EBE8;
 
 }
 .first-section{
+  background-color: #F7EBE8;
+  padding-top: 1vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   font-size: 10vh;
-  background-color: #E54B4B;
   
 
 }
 
+.underline{
+  transform: scale(1, -1);
+        color: #db8c42;
+        -moz-transform: scale(1, -1);
+        -webkit-transform: scale(1, -1);
+        -o-transform: scale(1, -1);
+        -ms-transform: scale(1, -1);
+        transform: scale(1, -1);
+        font-weight:50;
+}
+
 .second-section{
+  background-color: #F7EBE8;
+
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
-align-items: center;
+ align-items: center;
+  font-size: 10vh;
+  
+border: solid red;
 }
 
 .select-city{
@@ -48,16 +66,45 @@ align-items: center;
   padding-top:.5vh;
   padding-bottom:.5vh;
 }
+.form {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+
+}
+.search-field {
+  border: solid #E8BEB4;
+  border-width: .3vh;
+  border-radius: 1vh;
+  outline: none;
+  margin-bottom: 0;
+  padding: 3vh;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+margin-left: -7vh;
+
+}
+
+.search-button img {
+  width: 4vh;
+  height: 4vh;
+  object-fit: cover;
+}
 
 .select-location{
   font-family: monospace;
-  font-size: 3vh;
+  font-size: 2vh;
   background-color: #F7EBE8;
-  padding: 2vh;
+  padding: 2.5vh;
   border-radius: 1.5vh;
   padding-right: 5vh;
   padding-left: 5vh;
   margin-top: 0;
+
 }
 
 img {  
@@ -65,25 +112,36 @@ img {
   height: 3vh;
   }  
 
-  button {
+  .select-location {
     border: none;
     outline: none;
-    transition: background-color 200ms linear;
+    transition: background-color 20ms linear;
+    background-color: #F7EBE8;
+    background-color: #E8BEB4;
+
   }
-  button:hover{
-    background-color: #a8ffbf;
+  .select-location:hover{
+    background-color: #f5d2ca;
    
   }
   input{
     font-size: 3vh;
     border-color: black;
     color: black;
-    padding: 2vh;
+    padding: 1.5vh;
     width: 35vw;
     border-radius: 1.5vh;
+    padding-top: 2.5vh;
+    padding-bottom:2.5vh;
     border-width: 0.3vh;
+
   }
   input::placeholder {
-    opacity: 0.9;
-    
+  
+    color: black;
 }
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

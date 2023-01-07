@@ -66,8 +66,24 @@ img {
   }  
 
   button {
-    background-color: #a2e0b3;
     border: none;
     outline: none;
-
+    transition: background-color 200ms linear;
   }
+  button:hover{
+    background-color: #a8ffbf;
+   
+  }
+  input{
+    font-size: 3vh;
+    border-color: black;
+    color: black;
+    padding: 2vh;
+    width: 35vw;
+    border-radius: 1.5vh;
+    border-width: 0.3vh;
+  }
+  input::placeholder {
+    opacity: 0.9;
+    
+}

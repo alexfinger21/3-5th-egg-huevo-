@@ -1,5 +1,22 @@
-document.getElementById("location-selector").addEventListener("click", getLocation);
 
+window.addEventListener("load", () => {
+  
+  document.getElementById("location-selector").addEventListener("click", getLocation);
+
+  setTimeout(() => {
+    document.getElementsByClassName("search-button")[0].children[0].style.opacity = 1
+    document.getElementsByClassName("search-field")[0].style.opacity = 1
+  }, 1000)
+})
+
+jSuites.dropdown(document.getElementById('dropdown'), {
+  url: '/v4/large',
+  autocomplete: true,
+  lazyLoading: true,
+  multiple: false,
+  width: '280px',
+data: ["balls", "no", "try again", "average garringtin"]
+});
 
 function getLocation(){
     const options = {

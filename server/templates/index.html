@@ -5,23 +5,26 @@
         <link rel="stylesheet" href="../static/universal.css"></link>
         <script src="../Static/index.js" defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
-        
+        <script src="https://jsuites.net/v4/jsuites.js"></script>
+        <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
         
         <title>CityNo</title>
     </head>
     <body>
-        <div class="first-section">
-            <span class="title">CITYNO</span>
-            <span class = "underline">_____________________</span>
-        </div>
 
-        <div class="second-section">
-            <img src="../images/cityscape.png">
-
-            <form action="/" method="GET" class="form">
-                <input type="search" placeholder="Enter a state to get started" class="search-field">
-                        
-                <button type="submit" class="search-button">
+    <div class="first-section">
+        <span class="title">CITYNO</span>
+        <span class = "underline">_____________________</span>
+    </div>
+    
+    <div class="second-section">
+        <img src="../images/cityscape.png">
+        
+        <form action="/" method="GET" class="form">
+            <div class="search-field" id="dropdown"></div>
+            
+            
+            <button type="submit" class="search-button">
                   <img src="../images/search.png">
                 </button>
               </form>

@@ -1,14 +1,14 @@
 * {
     box-sizing: border-box;
+    border: solid red;
   }
   body {
     font-size: 14px;
   }
-
- 
+  
   .v1_2 {
-    width: 37vh;
-    height: 42vh;
+    width: 725px;
+    height: 458px;
     background: url("../images/v1_2.png");
     background-repeat: no-repeat;
     background-position: center center;
@@ -21,8 +21,8 @@
     overflow: hidden;
   }
   .v1_3 {
-    width: 37vh;
-    height: 42vh;
+    width: 725px;
+    height: 458px;
     background: rgba(255,255,255,1);
     opacity: 1;
     position: relative;
@@ -31,8 +31,8 @@
     overflow: hidden;
   }
   .v1_4 {
-    width: 37vh;
-    height: 42vh;
+    width: 725px;
+    height: 59px;
     background: rgba(229,75,75,1);
     opacity: 1;
     position: relative;
@@ -40,28 +40,28 @@
     left: 0px;
   }
   .v1_5 {
-    width: 9vh;
+    width: 171px;
     color: rgba(0,7,45,1);
     position: absolute;
     top: 0px;
-    left: 14vh;
+    left: 277px;
     font-family: Sudo Var;
     font-weight: Regular;
-    font-size: 3vh;
+    font-size: 64px;
     opacity: 1;
     text-align: left;
   }
   .v1_6 {
-    width: 8vh;
-    height: 7vh;
+    width: 161px;
+    height: 77px;
     background: url("../images/v1_6.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 10vh;
-    left: 26vh;
+    top: 199px;
+    left: 282px;
     overflow: hidden;
   }
   .v1_7 {

@@ -126,25 +126,11 @@ function getLocation() {
             console.log(response.results[4].formatted_address);
             console.log(response.results[6].formatted_address);
 
-            let res;
-            let comma = 0;
-            for (
-              let i = 0;
-              i < response.results[6].formatted_address.length;
-              i++
-            ) {
-              if (response.results[6].formatted_address[i] == ",") {
-                comma++;
-              }
-
-              if (comma == 2) {
-                res = response.results[6].formatted_address.substring(0, i);
-                console.log(i);
-                break;
-              }
-            }
-
-            console.log(res);
+            let city = response.results[4].formatted_address.substring(0,response.results[4].formatted_address.lastIndexOf(','));
+            let state = response.results[6].formatted_address.substring(0,response.results[6].formatted_address.lastIndexOf(','));
+            sessionStorage.setItem('CITY', city);
+            sessionStorage.setItem('STATE', state);
+            
           }
         });
       }

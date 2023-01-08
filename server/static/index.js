@@ -109,10 +109,10 @@ function getLocation() {
 
       function success(pos) {
         const crd = pos.coords;
-        console.log(`Your current position is:`);
-        console.log(`Latitude : ${crd.latitude}`);
-        console.log(`Longitude: ${crd.longitude}`);
-        console.log(`More or less ${crd.accuracy} meters.`);
+        //console.log(`Your current position is:`);
+        //console.log(`Latitude : ${crd.latitude}`);
+        //console.log(`Longitude: ${crd.longitude}`);
+        //console.log(`More or less ${crd.accuracy} meters.`);
 
         const geocoder = new google.maps.Geocoder();
 
@@ -123,14 +123,15 @@ function getLocation() {
 
         geocoder.geocode({ location: latlng }).then((response) => {
           if (response.results[0]) {
-            console.log(response.results[4].formatted_address);
-            console.log(response.results[6].formatted_address);
+            //console.log(response.results[4].formatted_address);
+            //console.log(response.results[6].formatted_address);
 
-            let city = response.results[4].formatted_address.substring(0,response.results[4].formatted_address.lastIndexOf(','));
-            let state = response.results[6].formatted_address.substring(0,response.results[6].formatted_address.lastIndexOf(','));
+            let city = response.results[6].formatted_address.substring(0,response.results[6].formatted_address.indexOf(','));
+            let state = response.results[8].formatted_address.substring(0,response.results[8].formatted_address.indexOf(','));
             sessionStorage.setItem('CITY', city);
             sessionStorage.setItem('STATE', state);
             
+            window.location.href = "http://127.0.0.1:5000/chart";
           }
         });
       }

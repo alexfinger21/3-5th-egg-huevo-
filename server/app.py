@@ -5,8 +5,6 @@ from flask import *
 
 app = Flask(__name__)
 
-if __name__ == '__main__':
-   app.run()
 
 @app.route('/')
 def home():
@@ -27,8 +25,8 @@ def autocomplete():
       elif req["type"] == "county":
          return jsonify(counties_and_cities[state_unabbrev[req["state"]]])
       elif req["type"] == "data":
-         stuff = ""
-         county_no = req["county"][:-4]
+         stuff = []
+         county_no = req["county"]
          state = req["state"]
          if state in state_abbrev.values():
             state = state_unabbrev[req["state"]]
@@ -43,14 +41,16 @@ def autocomplete():
                actual_location = county_no
          actual_location += ", " + state
          
-         stuff = county_no + ", " + state + ("\n\nPopulation: {population}\nMedian House Price: ${median_house_price}\nMedian Rent Price: ${median_rent_price}\n").format(population=county_dictionary[actual_location]["Population"], median_house_price=county_dictionary[actual_location]["Median House Price"], median_rent_price=county_dictionary[actual_location]["Median Rent Price"]) 
+         stuff.append(county_no + ", " + state)
+         stuff.append(county_dictionary[actual_location]["Population"])
+         stuff.append(county_dictionary[actual_location]["Median House Price"])
+         stuff.append(county_dictionary[actual_location]["Median Rent Price"]) 
 
          #col
          if county_no in cost_of_living.keys():
-            stuff += "Cost Of Living: $" + cost_of_living[county_no]
+            stuff.append("Cost Of Living: $" + cost_of_living[county_no])
 
          if county_no in state_crime_dictionary.keys():
-            state_crime_dictionary = {}
             state_crime_spreadsheet = state_crime_abbrev['OH']
             for i in range(6, 292):
                if state_crime_spreadsheet.cell(row=i, column=2).value == county_no:
@@ -65,14 +65,19 @@ def autocomplete():
                   state_crime_dictionary[state_crime_spreadsheet.cell(row=i, column=2).value]["Narcotic Offenses"] = state_crime_spreadsheet.cell(row=i,column=55).value
                   state_crime_dictionary[state_crime_spreadsheet.cell(row=i, column=2).value]["Crime Rate"] = state_crime_spreadsheet.cell(row=i,column=4).value / state_crime_spreadsheet.cell(row=i,column=3).value
                   
-                  stuff += [state_crime_dictionary[req["county"]]["Assault Offences"], state_crime_dictionary[req["county"]]["Homicide Offences"], state_crime_dictionary[req["county"]]["Kidnapping/Abduction"], state_crime_dictionary[req["county"]]["Burglary/Breaking and Entering"], state_crime_dictionary[req["county"]]["Fraud Offences"], state_crime_dictionary[req["county"]]["Identity Theft"], state_crime_dictionary[req["county"]]["Narcotic Offenses"]]
+                  stuff += [state_crime_dictionary[county_no]["Assault Offences"], state_crime_dictionary[county_no]["Homicide Offences"], state_crime_dictionary[county_no]["Kidnapping/Abduction"], state_crime_dictionary[county_no]["Burglary/Breaking and Entering"], state_crime_dictionary[county_no]["Fraud Offences"], state_crime_dictionary[county_no]["Identity Theft"], state_crime_dictionary[county_no]["Narcotic Offenses"]]
 
-                  stuff += [state_crime_dictionary[req["county"]]["Total Offences"], state_crime_dictionary[req["county"]]["Crime Rate"]]
+                  stuff += [state_crime_dictionary[county_no]["Total Offences"], state_crime_dictionary[county_no]["Crime Rate"]]
                   #total offenses, crime rate
                   break
-         return stuff
+         return jsonify(stuff) 
+         # county/city, state | population | median house price | median rent price | cost of living | assault | homicide | kidnapping/abduction | burglary | fraud | identity theft | narcotics | total offenses | crime rate
    else:
       return render_template('index.html')
+   
+@app.route("/chart")
+def chart():
+   return render_template('Chart.html')
 
 state_abbrev = {
     'AK': 'Alaska',
@@ -323,3 +328,6 @@ for i in range(6, 292):
       state_crime_dictionary[state_crime_spreadsheet.cell(row=i, column=2).value]["Identity Theft"] = median_house_prices_of_counties_spreadsheet.cell(row=i,column=40).value
       state_crime_dictionary[state_crime_spreadsheet.cell(row=i, column=2).value]["Narcotic Offenses"] = median_house_prices_of_counties_spreadsheet.cell(row=i,column=55).value
       state_crime_dictionary[state_crime_spreadsheet.cell(row=i, column=2).value]["Crime Rate"] = median_house_prices_of_counties_spreadsheet.cell(row=i,column=3).value / median_house_prices_of_counties_spreadsheet.cell(row=i,column=2).value
+      
+if __name__ == '__main__':
+   app.run()

@@ -2,9 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="Chart.css"></link>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-        <script src="../Static/Chart.js" defer></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='Chart.css') }}"></link>
+        <script src="{{ url_for('static', filename='Chart.js') }}"></script>
+        <script src="{{ url_for('static', filename='Chart.js') }}" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
         <title>Chart</title>
     </head>
     <body>
@@ -14,7 +16,7 @@
         </div>
         
 
-        <script type="module" src="Chart.js"></script>
+        <script type="module" src="{{ url_for('static', filename='Chart.css') }}"></script>
 
 
 
@@ -45,7 +47,7 @@
 
 
  
-        <img src="../Static/plusicon.png" id = "plusButton">
+        <img src="{{ url_for('static', filename='plusicon.png') }}" id = "plusButton">
 
 
 
@@ -53,13 +55,12 @@
             <header class = "CityName" id = "CityID"></header>
             <header class = "headers"> Average Cost of living </header>
             <ul>
-                <progress id="file" value="32" max="100"> 32% 
+                <progress id="file" value="42" max="100"> 42%%
                     <div> ::-webkit-progress-bar 
                         <div>::-webkit-progress-value </div>
                     </div>
                 </progress>
                 <li id = "month">Rent per month: </li>
-                <li id = "food">Food price: </li>
                 <li id = "house">House price: </li>
             </ul>
 
@@ -71,13 +72,12 @@
             <header class = "CityName" id = "CityID1"></header>
             <header class = "headers"> Average Cost of living </header>
                 <ul>
-                    <progress id="file" value="32" max="100"> 32% 
+                    <progress id="file" value="50" max="100"> 50% 
                         <div> ::-webkit-progress-bar 
                             <div>::-webkit-progress-value </div>
                         </div>
                     </progress>
                     <li id = "month1">Rent per month: </li>
-                    <li id = "food1">Food price: </li>
                     <li id = "house1">House price: </li>
                 </ul>
         </div>

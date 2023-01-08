@@ -48,8 +48,46 @@ window.addEventListener("load", () => {
             document.querySelector(".or").style.transition = "all 500ms"
             document.querySelector(".or").style.opacity = 0
             document.querySelector(".select-location").style.opacity = 0
+            document.querySelector("#dropdown2").style.opacity = 1
+
+              jsuite = jSuites.dropdown(document.getElementById("dropdown2"), {
+                url: "/v4/large",
+                autocomplete: true,
+                lazyLoading: true,
+                multiple: false,
+                width: "100vh",
+                placeholder: "Enter a city or county name",
+                data: {},
+              })
+
+              data = {type: "county", state: selectedItem.children[0].textContent}
+
+            $.ajax({
+              type: "POST",
+              contentType: "application/json",
+              url:
+                window.location.href.substring(
+                  0,
+                  window.location.href.lastIndexOf("/") + 1
+                ) + "autocomplete",
+              data: JSON.stringify(data),
+              success: function (response) {
+                jsuite = jSuites.dropdown(document.getElementById("dropdown2"), {
+                  url: "/v4/large",
+                  autocomplete: true,
+                  lazyLoading: true,
+                  multiple: false,
+                  width: "100vh",
+                  placeholder: "Enter a city or county name",
+                  data: response,
+                })
+              }
+            })
+
           }else{
-          setTimeout(checkForChanges, 500);
+            if (!selectedItem) {
+              setTimeout(checkForChanges, 500);
+            }
           }
           
         }

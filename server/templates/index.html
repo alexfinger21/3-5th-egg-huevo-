@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="../Static/universal.css"></link>
-        <script src="../Static/index.js" defer></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='universal.css') }}"></link>
+        <script src="{{ url_for('static', filename='index.js') }}" defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
         <script src="https://jsuites.net/v4/jsuites.js"></script>
         <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
@@ -20,33 +20,21 @@
     <div class="second-section">
         <div class = "combine">
         <div class="search-field" id="dropdown"></div>
-<<<<<<< HEAD
         <img  class = "cityid" style = "transition: all 200ms linear; height: 45vh; margin-bottom: 30vh;position:absolute;z-index:0;object-fit: cover;" src = "{{ url_for('static', filename='cityscape.png') }}">
-=======
-        <img class = "cityid" style = "height: 45vh; margin-bottom: 30vh;position:absolute;z-index:0;object-fit: cover;" src = "../Static/cityscape.png">
->>>>>>> 17ed97b7d40b2418d17dd51ba791ba2af7b7eecc
             
             <button type="submit" class="search-button">
-                  <img id = "searchbutton" src = "../Static/search.png">
+                  <img id = "searchbutton" src = "{{ url_for('static', filename='search.png') }}">
                 </button>
               </form>
             </div>
-            <div class="or"><img id = "orbutton" src = "../Static/OR.png">
+            <div class="or"><img id = "orbutton" src = "{{ url_for('static', filename='OR.png') }}">
             </div>
-            <button class="select-location" id = "location-selector">Use your current location</button>
+            <button class="select-location" id = "location-selector">Use your current location</button> 
+            <div style="opacity: 0; margin-left: 2.3vw; transition: all 200ms linear; transform: translate(0, -80px); " class="search-field" id="dropdown2"></div>
         </div>
-<<<<<<< HEAD
-=======
-        
-        <div class = "secondcombine">
-            <div class="search-field" id="dropdownstate"></div>
-          
-                <button type="submit" class="checkmark">
-                    <img id = "checkmarkbutton" src = "../Static/checkmark.png">
-                </button>
-                  </form>
-                </div>
->>>>>>> 17ed97b7d40b2418d17dd51ba791ba2af7b7eecc
+
+       
+
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqv2HqZffv5Syl_4-UXF_LuXk83IUHFj8&callback=initMap" defer></script>
     </body>
 </html>

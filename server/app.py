@@ -5,24 +5,29 @@ from flask import *
 
 app = Flask(__name__)
 
+if __name__ == '__main__':
+   app.run()
+
 @app.route('/')
 def home():
    return render_template('index.html')
-if __name__ == '__main__':
-   app.run()
    
-app.route('/autocomplete', methods=["GET", "POST"])
+@app.route('/autocomplete', methods=["GET", "POST"])
 def autocomplete():
+   print(request.method)
    if request.method == "POST":
-      if request.form.get("type") == "state": #autocomplete for state
+      req = request.get_json()
+      if req["type"] == "state": #autocomplete for state
          options = []
-         currently_typed = request.form.get("info")
+         currently_typed = req["info"]
          
-         for k, state in state_abbrev.values():
-            if state[:len(currently_typed)] == currently_typed:
+         for k, state in state_abbrev.items():
+            if state[:len(currently_typed)].lower() == currently_typed.lower():
                options.append(state)
          
          return jsonify(options)
+   else:
+      return render_template('index.html')
 
 
 
@@ -169,7 +174,7 @@ for i in range(2, 3145):
       if not state_unabbrev[counties_spreadsheet.cell(row=i, column=3).value] in counties_in_states.keys(): 
          counties_in_states[state_unabbrev[counties_spreadsheet.cell(row=i, column=3).value]] = []
       counties_in_states[state_unabbrev[counties_spreadsheet.cell(row=i, column=3).value]].append(counties_spreadsheet.cell(row=i, column=2).value)
-print(counties_in_states)
+#print(counties_in_states)
 
 #city
 cities_in_states = {}
@@ -180,7 +185,7 @@ for i in range(2, 30411):
    cities_in_states[cities_spreadsheet.cell(row=i, column=3).value].append(cities_spreadsheet.cell(row=i, column=1).value)
 
 
-cities_and_counties = cities_in_states.values() + counties_in_states.values(1)
+cities_and_counties = list(cities_in_states.values()) + list(counties_in_states.values())
 
 #cities in counties
 cities_in_counties = {}

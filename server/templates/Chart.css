@@ -1,9 +1,10 @@
 * {
     box-sizing: border-box;
-    font-family: Oswald;
     font-weight: normal;
+    font-family: monospace;
   }
-  
+  .title{
+    font-family: Oswald  !important}
   body {
     display: flex;
     flex-direction: column;
@@ -29,7 +30,7 @@
   
   .underline{
     transform: scale(1, -1);
-          color: #E9C29F;
+          color: #FFCD9F;
           -moz-transform: scale(1, -1);
           -webkit-transform: scale(1, -1);
           -o-transform: scale(1, -1);
@@ -53,7 +54,7 @@
     object-fit: cover;
   }
 
-  .data1, .dot1, .dotText1.population1{
+  .data1, .dot1, .dotText1, .population1{
     margin-left: 70vw;
   }
 
@@ -75,28 +76,77 @@
     display: inline-block;
     position:absolute;
     z-index: 2;
-    margin-left: 17vw;
-    margin-top: 60vh;
-    font-size: 3vh;
-    background-color: #F7EBE8;
+    
+    margin-top: 43vh;
+    font-size: 2vh;
+   
   }
 
   .dotText, .dotText1 {
     display: block;
-    width: 160px;
+    width: 200px;
     position:absolute;
     z-index: 2;
     margin-top: 39vh;
     font-size: 3vh;
+    resize: none;
   }
+
   #plusButton{
     margin-top: 80vh;
-    margin-left: 90vw;
+    margin-left: 93vw;
     width: 4vw;
     position:absolute;
     z-index: 0;
     object-fit: cover;
     transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
-
+  .rectangle, .rectangle1{
+    font-family: monospace !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  width: 35vw;
+  height: 30vh;
   
+  margin-left: 5vw;
+  margin-top: 35vh;
+  border-radius: 2vh;
+  background-color: #FFCD9F;
+  }
+  .rectangle1{
+    margin-left: 16vw;
+  }
+
+  .BIGAREA{
+    display: flex;
+
+  }
+.headers{
+  padding-top: 1vh;
+  font-size: 3vh;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 400px;
+  height: 15px;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: #FFFFFF;
+  border-radius: 4px;
+}
+progress[value]::-webkit-progress-value {
+  background-color: #FF6F6F;
+  border-radius: 4px;
+  background-size: 20px 15px, 100% 100%, 100% 100%;
+}
+
+li{
+  font-size: 2.5vh;
+}
+
+.CityName{
+  font-size: 5vh;
+}

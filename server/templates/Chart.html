@@ -13,26 +13,75 @@
             <span class = "underline">_____________________</span>
         </div>
         
-        <span class="dot" id="dotty"></span>
-        <span class="dotText" id = "texty"></span>
 
-        <div class= "data">
+        <script type="module" src="Chart.js"></script>
+
+
+
+
+
+        <span class="dot1" id="dotty"></span>
+        <span class="dotText1" id = "texty"></span>
+        <div class= "data" id = "dataID">
             <canvas id="doughChart" width="400" height="400"></canvas>
-            <script type="module" src="Chart.js"></script>
         </div>
 
-        <span class="dot1" id="dotty1"></span>
-        <span class="dotText1" id = "texty1"></span>
-        <div class= "data1">
+
+
+        <span class="dot" id="dotty1"></span>
+        <span class="dotText" id = "texty1"></span>
+        <div class= "data1" id = "data1ID">
             <canvas id="doughChart1" width="400" height="400"></canvas>
-            <script type="module" src="Chart.js"></script>
         </div>
+
+
+
+
 
         <span class="population" id = "popCount"></span>
         <span class="population1" id = "popCount1"></span>
+
+
+
+
  
         <img src="../Static/plusicon.png" id = "plusButton">
 
+
+
+        <div class = "rectangle" id = "rectID">
+            <header class = "CityName" id = "CityID"></header>
+            <header class = "headers"> Average Cost of living </header>
+            <ul>
+                <progress id="file" value="32" max="100"> 32% 
+                    <div> ::-webkit-progress-bar 
+                        <div>::-webkit-progress-value </div>
+                    </div>
+                </progress>
+                <li id = "month">Rent per month: </li>
+                <li id = "food">Food price: </li>
+                <li id = "house">House price: </li>
+            </ul>
+
+        </div>
+
+        
+
+        <div class = "rectangle1" id = rect1ID>
+            <header class = "CityName" id = "CityID1"></header>
+            <header class = "headers"> Average Cost of living </header>
+                <ul>
+                    <progress id="file" value="32" max="100"> 32% 
+                        <div> ::-webkit-progress-bar 
+                            <div>::-webkit-progress-value </div>
+                        </div>
+                    </progress>
+                    <li id = "month1">Rent per month: </li>
+                    <li id = "food1">Food price: </li>
+                    <li id = "house1">House price: </li>
+                </ul>
+        </div>
+    </div>
 
 
     </body>

@@ -10,7 +10,7 @@ document.getElementById("popCount1").style.opacity = secondShown;
 
 
 //Left Database Input
-var cityName = 'CITY TEST';
+var cityName = localStorage.getItem('CITY') + ", " + localStorage.getItem('STATE');
 var crimeData = [22, 1, 1, 1, 1, 1, 1, 1];
 var totalPop = 30;
 var totalCrime = 2;

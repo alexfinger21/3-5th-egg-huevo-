@@ -34,8 +34,8 @@ window.addEventListener("load", () => {
         url: window.location.href.substring( 0, window.location.href.lastIndexOf( "/" ) + 1) + "autocomplete",
         data: JSON.stringify(data),
         success: function(response) {
-            console.log(response)
-            console.log(response[0])
+            //console.log(response)
+            //console.log(response[0])
         },
 
         error: function(jqXHR, textStatus, errorThrown)
@@ -54,10 +54,10 @@ window.addEventListener("load", () => {
 
       function success(pos) {
           const crd = pos.coords;
-          console.log('Your current position is:');
-          console.log('Latitude : ${crd.latitude}');
-          console.log('Longitude: ${crd.longitude}');
-          console.log('More or less ${crd.accuracy} meters.');
+          //console.log('Your current position is:');
+          //console.log('Latitude : ${crd.latitude}');
+          //console.log('Longitude: ${crd.longitude}');
+          //console.log('More or less ${crd.accuracy} meters.');
 
           const geocoder = new google.maps.Geocoder();
 
@@ -70,24 +70,15 @@ window.addEventListener("load", () => {
               .geocode({ location: latlng })
               .then((response) => {
                 if (response.results[0]) {
-                  console.log(response.results[4].formatted_address)
-                  console.log(response.results[6].formatted_address)
+                  //console.log(response.results[4].formatted_address)
+                  //console.log(response.results[6].formatted_address)
 
-                  let res
-                  let comma = 0
-                  for (let i = 0; i<response.results[6].formatted_address.length; i++) {
-                      if (response.results[6].formatted_address[i] == ",") {
-                          comma++
-                      }
+                  const city = response.results[4].formatted_address.substring(0, response.results[4].formatted_address.indexOf(","));
+                  const state = response.results[6].formatted_address.substring(0, response.results[6].formatted_address.indexOf(","));
+                  //console.log(city + " " + state);
 
-                      if (comma == 2) {
-                          res = response.results[6].formatted_address.substring(0, i)
-                          console.log(i)
-                          break
-                      }
-                  }
-
-                  console.log(res)
+                  localStorage.setItem("CITY", city);
+                  localStorage.setItem("STATE", state);
                 }
               })
       }
@@ -97,5 +88,6 @@ window.addEventListener("load", () => {
       }
 
       navigator.geolocation.getCurrentPosition(success, error, options);
+      window.location = "../templates/Chart.html";
   }
 })

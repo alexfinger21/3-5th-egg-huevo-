@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='universal.css') }}"></link>
-        <script src="{{ url_for('static', filename='index.js') }}" defer></script>
+        <link rel="stylesheet" href="../Static/universal.css"></link>
+        <script src="../Static/index.js" defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer></script>
         <script src="https://jsuites.net/v4/jsuites.js"></script>
         <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
@@ -20,14 +20,14 @@
     <div class="second-section">
         <div class = "combine">
         <div class="search-field" id="dropdown"></div>
-        <img class = "cityid" style = "height: 45vh; margin-bottom: 30vh;position:absolute;z-index:0;object-fit: cover;" src = "{{ url_for('static', filename='cityscape.png') }}">
+        <img class = "cityid" style = "height: 45vh; margin-bottom: 30vh;position:absolute;z-index:0;object-fit: cover;" src = "../Static/cityscape.png">
             
             <button type="submit" class="search-button">
-                  <img id = "searchbutton" src = "{{ url_for('static', filename='search.png') }}">
+                  <img id = "searchbutton" src = "../Static/search.png">
                 </button>
               </form>
             </div>
-            <div class="or"><img id = "orbutton" src = "{{ url_for('static', filename='OR.png') }}">
+            <div class="or"><img id = "orbutton" src = "../Static/OR.png">
             </div>
             <button class="select-location" id = "location-selector">Use your current location</button>
         </div>
@@ -36,7 +36,7 @@
             <div class="search-field" id="dropdownstate"></div>
           
                 <button type="submit" class="checkmark">
-                    <img id = "checkmarkbutton" src = "{{ url_for('static', filename='checkmark.png') }}">
+                    <img id = "checkmarkbutton" src = "../Static/checkmark.png">
                 </button>
                   </form>
                 </div>

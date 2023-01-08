@@ -41,11 +41,11 @@
   
   
 
-  .data{
+  .data, .data1{
     transform: translate(-50%, 25%);
     border-color: #E9C29F;
     color: #000;
-    z-index: 1;
+    z-index: 2;
     margin-left: 20vw;
     margin-bottom: 80vw;
     scale: .75;
@@ -53,9 +53,13 @@
     object-fit: cover;
   }
 
+  .data1, .dot1, .dotText1.population1{
+    margin-left: 70vw;
+  }
 
 
-  .dot {
+
+  .dot, .dot1 {
     height: 13.5vw;
     width: 13.5vw;
     margin-left: 16.5vw;
@@ -67,20 +71,20 @@
     display: inline-block;
   }
 
-  .population {
+  .population, .population1 {
     display: inline-block;
-    width: 160px;
-    position:fixed;
+    position:absolute;
     z-index: 2;
     margin-left: 17vw;
     margin-top: 60vh;
     font-size: 3vh;
+    background-color: #F7EBE8;
   }
 
-  .dotText {
+  .dotText, .dotText1 {
     display: block;
     width: 160px;
-    position:fixed;
+    position:absolute;
     z-index: 2;
     margin-top: 39vh;
     font-size: 3vh;

@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
 
     //Right
     var cityName1 = 'National Average';
-    var crimeData1 = [551557, , 920, 712, 70716, 61231, 95124];
+    var crimeData1 = [1557, , 920, 712, 7716, 6231, 95124];
     var totalPop1 = 331900000;
     var totalCrime1 = 817020;
     var crimeRatio1 = totalCrime1/totalPop1;
@@ -229,10 +229,10 @@ window.addEventListener("load", () => {
     //LRLR stats
     document.getElementById("CityID").textContent = cityName;
     document.getElementById("CityID1").textContent = cityName1;
-    document.getElementById("month").textContent = 'Rent per month: ' + monthPrice;
-    document.getElementById("month1").textContent = 'Rent per month: ' + monthPrice1;
-    document.getElementById("house").textContent = 'House price: ' + housePrice;
-    document.getElementById("house1").textContent = 'House price: ' + housePrice1;
+    document.getElementById("month").textContent = 'Rent per month: $' + monthPrice;
+    document.getElementById("month1").textContent = 'Rent per month: $' + monthPrice1;
+    document.getElementById("house").textContent = 'House price: $' + housePrice;
+    document.getElementById("house1").textContent = 'House price: $' + housePrice1;
 }})
 })
 

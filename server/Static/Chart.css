@@ -115,7 +115,9 @@
   background-color: #FFCD9F;
   }
   .rectangle1{
-    margin-left: 16vw;
+    position: absolute;
+    margin-top: 59vh;
+    margin-left: 56vw;
   }
 
   .BIGAREA{

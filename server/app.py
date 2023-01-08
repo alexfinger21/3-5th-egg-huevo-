@@ -48,7 +48,7 @@ def autocomplete():
 
          #col
          if county_no in cost_of_living.keys():
-            stuff.append("Cost Of Living: $" + cost_of_living[county_no])
+            stuff.append(cost_of_living[county_no])
 
          if county_no in state_crime_dictionary.keys():
             state_crime_spreadsheet = state_crime_abbrev['OH']

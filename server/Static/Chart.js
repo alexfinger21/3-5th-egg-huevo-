@@ -1,14 +1,37 @@
 
-var crimeData = [1, 1, 1, 1, 1, 1, 1, 1];
-var totalPop = 107;
-var totalCrime = 1;
-var crimeRatio = totalCrime/totalPop;
 
+//Invisible before needed
+var secondShown = 0;
+document.getElementById("dotty").style.opacity = secondShown;
+document.getElementById("texty").style.opacity = secondShown;
+document.getElementById("data1ID").style.opacity = secondShown;
+document.getElementById("rect1ID").style.opacity = secondShown;
+document.getElementById("popCount1").style.opacity = secondShown;
+
+
+//Left Database Input
+var cityName = 'CITY TEST';
+var crimeData = [22, 1, 1, 1, 1, 1, 1, 1];
+var totalPop = 30;
+var totalCrime = 2;
+var crimeRatio = totalCrime/totalPop;
+var monthPrice = 12;
+var foodPrice = 13;
+var housePrice = 14;
+
+//Right
+var cityName1 = 'CITYTEST 1';
 var crimeData1 = [2, 2, 2, 2, 2, 2, 2, 2];
-var totalPop1 = 207;
+var totalPop1 = 100;
 var totalCrime1 = 2;
 var crimeRatio1 = totalCrime1/totalPop1;
+var monthPrice1 = 14;
+var foodPrice1 = 16;
+var housePrice1 = 17;
 
+
+
+//Left input Data
 var inData = {
         labels: ['Assault', 'Homicide', 'Kidnapping', 'Burgulary', 'Fraud', 'Identity Theft', 'Narcotics', 'Other'],
         datasets:[{
@@ -38,7 +61,7 @@ var inData = {
             ],
         }]
     };
-
+    //Right
     var inData1 = {
         labels: ['Assault', 'Homicide', 'Kidnapping', 'Burgulary', 'Fraud', 'Identity Theft', 'Narcotics', 'Other'],
         datasets:[{
@@ -72,7 +95,7 @@ var inData = {
 
 
 
-
+//Left
 var ctx = document.getElementById("doughChart");
 var myChart = new Chart(ctx, {
   type: 'doughnut',
@@ -83,6 +106,7 @@ var myChart = new Chart(ctx, {
   }
 });
 
+//Right
 var ctx1 = document.getElementById("doughChart1");
 var myChart = new Chart(ctx1, {
   type: 'doughnut',
@@ -93,7 +117,8 @@ var myChart = new Chart(ctx1, {
   }
 });
 
-if(crimeRatio >= .09){
+//Right highCrime
+if(crimeRatio1 >= .09){
     document.getElementById("dotty").style.backgroundColor = "red";
     document.getElementById("dotty").style.marginLeft = "66vw";
 
@@ -103,17 +128,18 @@ if(crimeRatio >= .09){
 
 }
 
-if(crimeRatio >= .056 && crimeRatio < .09){
+//Right medcrime
+if(crimeRatio1 >= .056 && crimeRatio1 < .09){
     document.getElementById("dotty").style.backgroundColor = "yellow";
     document.getElementById("dotty").style.marginLeft = "66vw";
 
     document.getElementById("texty").textContent= 'Medium Crime';
-    document.getElementById("texty").style.marginLeft = "70vw";
+    document.getElementById("texty").style.marginLeft = "69.8vw";
     document.getElementById("texty").style.fontFamily = "monospace";
 
 }
-
-if(crimeRatio < .056){
+//Right lowcrime
+if(crimeRatio1 < .056){
     document.getElementById("dotty").style.backgroundColor = "green";
     document.getElementById("dotty").style.marginLeft = "66vw";
 
@@ -125,25 +151,30 @@ if(crimeRatio < .056){
 
 }
 
-
-if(crimeRatio1 >= .09){
+//left highcrime
+if(crimeRatio >= .09){
     document.getElementById("dotty1").style.backgroundColor = "red";
+
     document.getElementById("texty1").textContent= 'High Crime';
     document.getElementById("texty1").style.marginLeft = "19.5vw";
     document.getElementById("texty1").style.fontFamily = "monospace";
 
 }
 
-if(crimeRatio1 >= .056 && crimeRatio1 < .09){
+//left medcrime
+if(crimeRatio >= .056 && crimeRatio < .09){
     document.getElementById("dotty1").style.backgroundColor = "yellow";
-    document.getElementById("text1").textContent= 'Medium Crime';
-    document.getElementById("texty1").style.marginLeft = "18.68vw";
+
+    document.getElementById("texty1").textContent= 'Medium Crime';
+    document.getElementById("texty1").style.marginLeft = "18.48vw";
     document.getElementById("texty1").style.fontFamily = "monospace";
 
 }
 
-if(crimeRatio1 < .056){
+//leftlowcrime
+if(crimeRatio < .056){
     document.getElementById("dotty1").style.backgroundColor = "green";
+
     document.getElementById("texty1").textContent= 'Low Crime';
     document.getElementById("texty1").style.marginLeft = "19.6vw";
     document.getElementById("texty1").style.fontFamily = "monospace";
@@ -152,30 +183,44 @@ if(crimeRatio1 < .056){
 
 }
 
-
+//left population count
 document.getElementById("popCount").textContent= 'Population: ' + totalPop;
+document.getElementById("popCount").style.marginLeft = "18.5vw";
+//right population count
 document.getElementById("popCount1").textContent= 'Population: ' + totalPop1;
 document.getElementById("popCount1").style.marginLeft = "68.5vw";
-document.getElementById("popCount").style.marginLeft = "18.5vw";
 
 
-
+//add-button hover turn
 document.getElementById("plusButton").addEventListener('mouseover', (event) => {
 
     document.getElementById("plusButton").style.transform = 'rotate(' + 360 + 'deg)';
 
 });
 
+//add-button hover revert
 document.getElementById("plusButton").addEventListener('mouseleave', (event) => {
 
     document.getElementById("plusButton").style.transform = 'rotate(' + 0 + 'deg)';
     
 });
 
+//add-button click action
 document.getElementById("plusButton").addEventListener('click', (event) => {
 
-    //link for another data struct
+    //gotten realistic
+    
     
 });
+
+//LRLR stats
+document.getElementById("CityID").textContent = cityName;
+document.getElementById("CityID1").textContent = cityName1;
+document.getElementById("month").textContent = 'Rent per month: ' + monthPrice;
+document.getElementById("month1").textContent = 'Rent per month: ' + monthPrice1;
+document.getElementById("food").textContent = 'Food price: ' + foodPrice;
+document.getElementById("food1").textContent = 'Food price: ' + foodPrice1;
+document.getElementById("house").textContent = 'House price: ' + housePrice;
+document.getElementById("house1").textContent = 'House price: ' + housePrice1;
 
 

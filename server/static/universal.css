@@ -7,7 +7,7 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 180vh;
+  min-height: 100vh;
   justify-content: space-between;
   flex-grow: 1;
   margin: 0;
@@ -49,14 +49,13 @@ img[src="{{ url_for('static', filename=cityscape.png') }}"] {
 
 .second-section{
   background-color: #F7EBE8;
-
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
  align-items: center;
  font-size: 2vh;
- 
+ padding-top: 0;
   
 }
 

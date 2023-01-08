@@ -81,6 +81,19 @@ window.addEventListener("load", () => {
                   placeholder: "Enter a city or county name",
                   data: response,
                 })
+
+                let selectedItem2 
+                Array.from(document.getElementById("dropdown2").children[1].children[1].children).forEach((item) => {
+                  function checkForChanges2() {
+                    console.log(x.classList.contains("jdropdown-selected"))
+                  if (x.classList.contains("jdropdown-selected")) {
+                    selectedItem2 = item
+                    sessionStorage.setItem('CITY', selectedItem2.children[0].textContent);
+                    sessionStorage.setItem('STATE', selectedItem.children[0].textContent);
+
+                  }
+                }
+                })
               }
             })
 
@@ -131,6 +144,7 @@ function getLocation() {
             sessionStorage.setItem('CITY', city);
             sessionStorage.setItem('STATE', state);
             
+            window.location.href = "http://127.0.0.1:5000/chart";
           }
         });
       }
